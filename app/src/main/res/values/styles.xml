@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.PaytmApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#00BFFF</item>
+        <item name="colorPrimaryVariant">#009ACD</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#FF4500</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+    </style>
+</resources>
