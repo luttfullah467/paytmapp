@@ -1,10 +1,14 @@
 package com.example.paytmapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProductListActivity extends AppCompatActivity {
 
@@ -25,9 +29,25 @@ public class ProductListActivity extends AppCompatActivity {
         list.add(new ProductItem("Electricity Bill"));
         list.add(new ProductItem("Gas Bill"));
         list.add(new ProductItem("Movie Tickets"));
-        
 
         ProductAdapter adapter = new ProductAdapter(this, list);
         recyclerView.setAdapter(adapter);
+
+        // 🔹 Logout button
+        Button btnLogout = findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(ProductListActivity.this, LoginActivity.class));
+            finish();
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
     }
 }
