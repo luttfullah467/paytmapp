@@ -22,16 +22,16 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        // Firebase init
+
         mAuth = FirebaseAuth.getInstance();
 
-        // Bind views
-        etEmail = findViewById(R.id.etUsername);   // email field
+
+        etEmail = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnSignup = findViewById(R.id.btnSignup);
-        btnGoLogin = findViewById(R.id.btnGoLogin); // FIXED ID
+        btnGoLogin = findViewById(R.id.btnGoLogin);
 
-        // Signup button
+
         btnSignup.setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
@@ -60,7 +60,7 @@ public class SignupActivity extends AppCompatActivity {
                     });
         });
 
-        // Go to Login
+
         btnGoLogin.setOnClickListener(v ->
                 startActivity(new Intent(SignupActivity.this, LoginActivity.class))
         );

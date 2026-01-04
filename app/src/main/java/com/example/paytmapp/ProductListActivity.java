@@ -33,7 +33,7 @@ public class ProductListActivity extends AppCompatActivity {
         ProductAdapter adapter = new ProductAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
-        // 🔹 Logout button
+
         Button btnLogout = findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
