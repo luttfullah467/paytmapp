@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.paytmapp">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -9,14 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PaytmApp">
 
-        <activity android:name=".TransactionSuccessActivity" android:exported="false" />
-        <activity android:name=".UserInfoActivity" android:exported="false" />
-        <activity android:name=".SendMoneyActivity" android:exported="false" />
-        <activity android:name=".FragmentsActivity" android:exported="false" />
-        <activity android:name=".ProductListActivity" android:exported="false" />
-        <activity android:name=".SignupActivity" android:exported="false" />
-        <activity android:name=".LoginActivity" android:exported="false" />
-        <activity android:name=".SplashActivity" android:exported="true">
+        <activity android:name=".QRScannerActivity" />
+        <activity android:name=".TransactionSuccessActivity" />
+        <activity android:name=".UserInfoActivity" />
+        <activity android:name=".SendMoneyActivity" />
+        <activity android:name=".FragmentsActivity" />
+        <activity android:name=".ProductListActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,5 +35,4 @@
         </activity>
 
     </application>
-
 </manifest>

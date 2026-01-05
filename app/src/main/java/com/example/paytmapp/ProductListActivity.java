@@ -6,6 +6,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.widget.Button;
+import android.content.Intent;
 
 import java.util.ArrayList;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,6 +35,13 @@ public class ProductListActivity extends AppCompatActivity {
         ProductAdapter adapter = new ProductAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
+        Button btnScanQR = findViewById(R.id.btnScanQR);
+
+        btnScanQR.setOnClickListener(v ->
+                startActivity(new Intent(
+                        ProductListActivity.this,
+                        QRScannerActivity.class))
+        );
 
         Button btnLogout = findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(v -> {
