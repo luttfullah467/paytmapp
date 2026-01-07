@@ -27,28 +27,13 @@ public class ProductListActivity extends AppCompatActivity {
 
         list = new ArrayList<>();
         list.add(new ProductItem("Send Money"));
-        list.add(new ProductItem("Mobile Recharge"));
+        list.add(new ProductItem("QR Code"));
         list.add(new ProductItem("Electricity Bill"));
         list.add(new ProductItem("Gas Bill"));
-        list.add(new ProductItem("Movie Tickets"));
+        list.add(new ProductItem("Logout"));
 
         ProductAdapter adapter = new ProductAdapter(this, list);
         recyclerView.setAdapter(adapter);
-
-        Button btnScanQR = findViewById(R.id.btnScanQR);
-
-        btnScanQR.setOnClickListener(v ->
-                startActivity(new Intent(
-                        ProductListActivity.this,
-                        QRScannerActivity.class))
-        );
-
-        Button btnLogout = findViewById(R.id.btnLogout);
-        btnLogout.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(ProductListActivity.this, LoginActivity.class));
-            finish();
-        });
     }
 
     @Override

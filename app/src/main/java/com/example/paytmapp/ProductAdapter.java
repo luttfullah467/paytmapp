@@ -1,5 +1,6 @@
 package com.example.paytmapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
@@ -43,12 +45,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             if (item.getName().equals("Send Money")) {
                 intent = new Intent(context, SendMoneyActivity.class);
             }
-            // 👇 Other items go to Fragments demo
+
+               else if (item.getName().equals("QR Code")) {
+                    context.startActivity(new Intent(context, QRScannerActivity.class));
+                }
+                else if (item.getName().equals("Logout")) {
+                    FirebaseAuth.getInstance().signOut();
+                    context.startActivity(new Intent(context, LoginActivity.class));
+                    ((Activity) context).finish();
+                }
+
+
             else {
                 intent = new Intent(context, FragmentsActivity.class);
             }
 
-            context.startActivity(intent);
         });
     }
 
