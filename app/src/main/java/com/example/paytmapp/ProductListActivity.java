@@ -28,7 +28,7 @@ public class ProductListActivity extends AppCompatActivity {
         list = new ArrayList<>();
         list.add(new ProductItem("Send Money"));
         list.add(new ProductItem("QR Code"));
-        list.add(new ProductItem("Electricity Bill"));
+        list.add(new ProductItem("AI Chatbot"));
         list.add(new ProductItem("Gas Bill"));
         list.add(new ProductItem("Logout"));
 

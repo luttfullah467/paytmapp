@@ -54,7 +54,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     context.startActivity(new Intent(context, LoginActivity.class));
                     ((Activity) context).finish();
                 }
-
+            else if (item.getName().equals("AI Chatbot")) {
+                context.startActivity(new Intent(context, ChatbotActivity.class));
+            }
 
             else {
                 intent = new Intent(context, FragmentsActivity.class);
