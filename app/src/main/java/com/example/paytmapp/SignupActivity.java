@@ -9,6 +9,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -49,6 +51,11 @@ public class SignupActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
+                            // ✅ Add user to Firebase Realtime Database for chat
+                            String dbEmail = email.replace(".", ",");  // Firebase keys cannot contain "."
+                            DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
+                            usersRef.child(dbEmail).setValue(true);
+
                             Toast.makeText(this, "Signup successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                             finish();

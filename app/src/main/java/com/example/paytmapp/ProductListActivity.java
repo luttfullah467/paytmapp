@@ -33,7 +33,7 @@ public class ProductListActivity extends AppCompatActivity {
         list.add(new ProductItem("Send Money"));
         list.add(new ProductItem("QR Code"));
         list.add(new ProductItem("AI Chatbot"));
-        list.add(new ProductItem("Gas Bill"));
+        list.add(new ProductItem("Chat User"));
         list.add(new ProductItem("Logout"));
 
         ProductAdapter adapter = new ProductAdapter(this, list);

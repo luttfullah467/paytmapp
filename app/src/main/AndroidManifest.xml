@@ -10,13 +10,19 @@
         android:required="false" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="PaytmApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PaytmApp">
+        android:theme="@style/Theme.PaytmApp"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".UserAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".UserListActivity"
+            android:exported="false" />
         <activity
             android:name=".ChatbotActivity"
             android:exported="false" />
@@ -28,6 +34,7 @@
         <activity android:name=".ProductListActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".ChatActivity" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -37,10 +44,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
-
+            android:value="ca-app-pub-3940256099942544~3347511713" />
     </application>
 
 </manifest>
