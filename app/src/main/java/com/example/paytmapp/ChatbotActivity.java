@@ -34,7 +34,7 @@ public class ChatbotActivity extends AppCompatActivity {
         sendBtn = findViewById(R.id.sendBtn);
 
         // 1. Initialize the model
-        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", "AIzaSyAA4YS2PvmAQ_eBRRuvUKN7WY6jK4j0QGE");
+        GenerativeModel gm = new GenerativeModel("gemini-2.5-flash", "AIzaSyDOfMrVAl2CCIXoCiAkWqDD0miRlO4wbiw");
         model = GenerativeModelFutures.from(gm);
 
         sendBtn.setOnClickListener(v -> {

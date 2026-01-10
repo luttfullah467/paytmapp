@@ -49,5 +49,6 @@ dependencies {
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
     implementation("com.google.guava:guava:31.1-android")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("com.google.android.gms:play-services-ads:23.0.0")
 
 }

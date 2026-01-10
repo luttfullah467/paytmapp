@@ -11,6 +11,10 @@ import android.content.Intent;
 
 import java.util.ArrayList;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 
 public class ProductListActivity extends AppCompatActivity {
 
@@ -34,6 +38,13 @@ public class ProductListActivity extends AppCompatActivity {
 
         ProductAdapter adapter = new ProductAdapter(this, list);
         recyclerView.setAdapter(adapter);
+
+        MobileAds.initialize(this, initializationStatus -> {});
+
+        AdView adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
     }
 
     @Override
